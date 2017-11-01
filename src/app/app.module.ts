@@ -4,12 +4,13 @@ import {RouterModule} from '@angular/router';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from '@angular/forms';
 import {CustomFormsModule} from 'ng2-validation';
-
-import {AppComponent} from './app.component';
 import {AngularFireModule} from 'angularfire2';
-import {environment} from '../environments/environment';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {AngularFireAuthModule} from 'angularfire2/auth';
+import {DataTableModule} from 'angular-4-data-table';
+
+import {AppComponent} from './app.component';
+import {environment} from '../environments/environment';
 import {BsNavbarComponent} from './bs-navbar/bs-navbar.component';
 import {HomeComponent} from './home/home.component';
 import {ProductsComponent} from './products/products.component';
@@ -27,9 +28,10 @@ import {AdminAuthGuard} from './admin-auth-guard.service';
 import {ProductFormComponent} from './admin/product-form/product-form.component';
 import {CategoryService} from './category.service';
 import {ProductService} from './product.service';
-import {DataTableModule} from "angular-4-data-table";
 import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import {ShoppingCartService} from './shopping-cart.service';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     LoginComponent,
     ProductFormComponent,
     ProductFilterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductQuantityComponent
   ],
   imports: [
     BrowserModule,
@@ -80,7 +83,8 @@ import { ProductCardComponent } from './product-card/product-card.component';
     AdminAuthGuard,
     UserService,
     CategoryService,
-    ProductService
+    ProductService,
+    ShoppingCartService
   ],
   bootstrap: [AppComponent]
 })

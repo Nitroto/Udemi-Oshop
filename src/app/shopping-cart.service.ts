@@ -63,7 +63,6 @@ export class ShoppingCartService {
         item$.remove();
       } else {
         item$.update({
-          // product: product,
           title: product.title,
           imageUrl: product.imageUrl,
           price: product.price,
